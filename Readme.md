@@ -1,6 +1,8 @@
 # CAT-DRKB
 A comprehensive Cataract Drug Repositioning Knowledge Base
 
+<img src="https://github.com/zhenxianggao/CAT-DRKB/blob/main/Image/Drug%20repurposing%20framework.jpg" width="700" height="460">
+
 
 
 
@@ -10,6 +12,8 @@ In the 'KowledgeGraph' folder, we constructed a biological knowledge graph by ex
 previous study, we constructed TreatKB, which included drug-disease treatment relationships mined by NLP techniques from records of patients in the FDA Adverse Event Reporting System (FAERS), FDA drug labels, MEDLINE abstracts, and clinical trial studies.
 
 The biological knowledge graph contained 72,360 nodes, 1,313,075 edges, seven node types, and nine semantic relationships. 
+
+<img src="https://github.com/zhenxianggao/CAT-DRKB/blob/main/Image/Knowledge%20graph%20data%20source.jpg" width="700" height="460">
 
 
 # The AI-baed drug repurposing model (KG-Predict)
