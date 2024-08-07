@@ -1,7 +1,7 @@
 # CAT-DRKB
 ## Comprehensive Cataract Drug Repositioning Framework
 
-Cataract drug repositioning involves identifying existing drugs that can be repurposed to cataracts. This comprehensive framework integrates a detailed knowledge base with advanced artificial intelligence (AI) models to facilitate the identification and validation of potential therapeutic candidates.
+This comprehensive framework integrates a detailed knowledge base with advanced artificial intelligence (AI) models to facilitate the identification and validation of potential therapeutic candidates.
 
 <img src="https://github.com/zhenxianggao/CAT-DRKB/blob/main/Image/Drug%20repurposing%20framework.jpg" width="650" height="420">
 
