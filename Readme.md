@@ -37,7 +37,7 @@ We highly recommend you use Conda for package management.
   python main.py -data test_data -gpu 1 -name test_model -epoch 500
 ```
 
-## Target-based drug Predicting:
+## Target-based drug Prediction:
 1)Create a test file named "ad_pre.txt" and move the file to the folder "test_data".
 
 2)Run the following command, predicting results will be saved in the file "pre_results.txt".
