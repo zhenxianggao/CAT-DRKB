@@ -1,36 +1,61 @@
-# Frag_VAE
-This repository contains our implementation of "A Multi-level Molecular Graph Generative Model for Fragment-based DrugDesign"
+# CAT-DRKB
+A comprehensive Cataract Drug Repositioning Knowledge Base
 
 
-# Requirements
-* Python(version >= 3.6)
-* Pytorch(version >= 1.1.0)
-* RDKit (version >= 2019.03)
-* networkx (version >= 2.4 )
-* numpy (version >= 1.18 )
 
-We highly recommend you to use conda for package management.
 
-# Vocab Extraction
-Fragments and interchangeable fragments are extracted by the following commond. (replace data/zinc_train.txt with your own molecular dataset)
+# The biological knowledge graph construction
+
+In the 'KowledgeGraph' folder, we constructed a biological knowledge graph by extracting multiple types of interactions between drugs, genes, diseases, and phenotypic annotations from various public biomedical datasets that offered high-quality structured information. Six types of phenome-level associations were collected from Gene Ontology Annotation (GOA), Genotype-Tissue Expression (GTEx), Mouse Genome Informatics (MGI), and Phenomebrowser databases. We also obtained two types of genome-level associations from MGI and DrugBank. In our
+previous study, we constructed TreatKB, which included drug-disease treatment relationships mined by NLP techniques from records of patients in the FDA Adverse Event Reporting System (FAERS), FDA drug labels, MEDLINE abstracts, and clinical trial studies.
+
+The biological knowledge graph contained 72,360 nodes, 1,313,075 edges, seven node types, and nine semantic relationships. 
+
+
+# The AI-baed drug repurposing model (KG-Predict)
+
+## Requirements:
+Python(version >= 3.6)
+pytorch(version>=1.4.0)
+ordered_set(version>=3.1)
+numpy(version>=1.16.2)
+torch_scatter(version>=2.0.4)
+scikit_learn(version>=0.21.1)
+
+We highly recommend you use Conda for package management.
+
+
+## Model Training:
+1)Create a folder "test_data" under folder "data" and move training data, valid data, and test data to the folder. 
+
+2)Use the following command to train the model, the model will be named as "test_model" and saved in the directory "model_saved".
 ```python
-python vocab_extract.py --moldata chembl_clean_process_20210317.txt --frag_file chembl_vocab_frag.txt --bond_file chembl_vocab_bond.txt --ncpu 32
+  python main.py -data test_data -gpu 1 -name test_model -epoch 500
 ```
 
-# Molecule Processing
-Molecules are converted into three-level hierarchical graphs using the fragment vocabulary from the first step.
+## Target-based drug Predicting:
+1)Create a test file named "ad_pre.txt" and move the file to the folder "test_data".
+
+2)Run the following command, predicting results will be saved in the file "pre_results.txt".
 ```python
-mkdir chembl_train
-python hier_mol_preprocess.py --moldata chembl_clean_process_20210317.txt --frag chembl_vocab_frag.txt --bond chembl_vocab_bond.txt --data_folder chembl_train/ --ncpu 8
+  python test.py -data test_data -gpu 1 -name test_model -save_result pre_results.txt -test_file ad_pre.txt
 ```
-# Model Training
-Train the model with KL regularization, use
-```python
-mkdir zinc_model
-python train.py --train_folder zinc_train --frag zinc_vocab_frag_rd2.txt --bond zinc_vocab_bond_rd2.txt --model_folder zinc_model/  --epoch 10
-```
-# Molecule Generation
-To generate molecules, use
-```python
-python mol_generation.py --frag zinc_vocab_frag_rd2.txt --bond zinc_vocab_bond_rd2.txt --model_folder zinc_model/model.0 --fragment_num 4  --num_decode 20 --mol_num 5 --batch_size 5 --beam_size 0 --radius 2 --mol_file gen.txt --fragment_smiles '*[c:1]1ccc(C)cc1C'
-```
+
+### Parameter Note:
+
+-data : the directory of training and testing data
+
+-gpu : the GPU to use
+
+-name : the name of the model snapshot (used for storing model parameters)
+
+-epoch : the number of epochs
+
+-save_result : the filename that is used to store test results
+
+-test_file : the name of testing file
+
+
+# The ranking of potential drug candidates for diabetes cataract
+
+In the 'DrugRank' folder, We list the top 1000 drug candidates repurposed for potentially reducing the risk of cataract extraction in patients with diabetes mellitus.
