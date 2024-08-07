@@ -1,9 +1,9 @@
 # CAT-DRKB
-A comprehensive Cataract Drug Repositioning Knowledge Base
+Comprehensive Cataract Drug Repositioning Framework
+
+Cataract drug repositioning involves identifying existing drugs that can be repurposed to cataracts. This comprehensive framework integrates a detailed knowledge base with advanced artificial intelligence (AI) models to facilitate the identification and validation of potential therapeutic candidates.
 
 <img src="https://github.com/zhenxianggao/CAT-DRKB/blob/main/Image/Drug%20repurposing%20framework.jpg" width="650" height="420">
-
-
 
 
 # The biological knowledge graph construction
@@ -16,7 +16,7 @@ The biological knowledge graph contained 72,360 nodes, 1,313,075 edges, seven no
 <img src="https://github.com/zhenxianggao/CAT-DRKB/blob/main/Image/Knowledge%20graph%20data%20source.jpg" width="650" height="390">
 
 
-# The AI-baed drug repurposing model (KG-Predict)
+# The AI-baed drug disovery model (KG-Predict)
 
 ## Requirements:
 Python(version >= 3.6)
