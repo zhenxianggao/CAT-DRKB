@@ -65,6 +65,6 @@ We highly recommend you use Conda for package management.
 In the 'DrugRank' folder, We list the top 1000 drug candidates repurposed for potentially reducing the risk of cataract extraction in patients with diabetes mellitus.
 
 # Reference
-[1] 4.	Zhenxiang Gao, Maria Gorenflo, David Kaelber, Vincent Monnier and Rong Xu. “Drug repurposing for reducing the risk of cataract extraction in patients with diabetes mellitus: integration of artificial intelligence-based drug prediction and clinical corroboration.” Frontiers in Pharmacology, 14, 1181711, 2023.
+[1] Zhenxiang Gao, Maria Gorenflo, David Kaelber, Vincent Monnier and Rong Xu. “Drug repurposing for reducing the risk of cataract extraction in patients with diabetes mellitus: integration of artificial intelligence-based drug prediction and clinical corroboration.” Frontiers in Pharmacology, 14, 1181711, 2023.
 
 [2] Zhenxiang Gao, Pingjian Ding, Rong Xu. “KG-Predict: A knowledge graph computational framework for drug repurposing.” Journal of Biomedical Informatics, 132, 104133, 2022.
